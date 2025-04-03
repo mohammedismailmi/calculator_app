@@ -25,7 +25,7 @@ class CalculatorTestCase(unittest.TestCase):
 
     def test_division_by_zero(self):
         response = self.app.post("/", data={"num1": "6", "num2": "0", "operation": "divide"})
-        self.assertIn(b"Cannot divide by zero", response.data)
+        self.assertIn(b"Error: Division by zero", response.data)
 
 if __name__ == "__main__":
     unittest.main()
